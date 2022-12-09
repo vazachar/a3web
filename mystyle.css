@@ -1,0 +1,612 @@
+
+
+/*--------------------------------------------------------------------------------------*/
+/*CSS for Navigation Bar*/
+
+/*sets the font for the whole page and padding/margins for the nav bar to appear at the very top*/
+* {
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+  font-family: 'Calibri Light', sans-serif;
+}
+
+/*color for the navbar*/
+header{
+  background-color:#ffffff;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  color: #8E8D8A;
+  text-decoration:none;
+}
+
+/*styles for the navigation bar by using flex to set up a responsive design*/
+.navbar{
+  min-height:70px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  border-bottom: solid 10px #d8cfb2;
+}
+
+/*styles the navigation links*/
+.nav-elem {
+  font-size: 1.5rem;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  
+}
+
+/*css for Torlex & Top company name*/
+.nav-name {
+  font-size: 3vw;
+  color: #66655f;
+  font-family: 'Snell Roundhand', sans-serif;
+}
+
+.nav-link {
+  transition:0.6s;
+
+}
+
+/*create hover effect for the navigation links*/
+.nav-link:hover{
+  background-color: #c4b99cfb;
+  color: #ffffff;
+  padding: 20px 20px;
+}
+
+.hamburger{
+  display:none; /*Don't want the hamburger to appear, we only want it to appear when the window is minimized to a certain width will use the @media later to make this hamburger appear*/
+  cursor:pointer;
+}
+
+.bar{
+  display:block;
+  width:25px; /*sets wthe width of the hamburger bars*/
+  height: 3px; /*sets the height of the hamburger bars*/
+  margin: 5px auto; /*sets the spacing of the hamburger bars*/
+  background-color: #777;
+}
+
+
+@media(max-width:1380px){  /*determines at what width the hamburger will appear*/
+  .hamburger{
+    display: block; 
+  }
+  /*Want to create an X when the hamburger is clicked on*/
+  .hamburger.active .bar:nth-child(2){ /*sets it so that the middle hamburger bar will dissapear*/
+    opacity:0;
+  }
+  .hamburger.active .bar:nth-child(1){
+    transform:translateY(8px) rotate(45deg); /*sets it so that the first hamburger bar will roatate at a 45 degrees angle and translate 8px*/ 
+
+  }.hamburger.active .bar:nth-child(3){
+    transform:translateY(-8px) rotate(-45deg); /*sets it so that the first hamburger bar will roatate at a 45 degrees angle andtranslate 8px*/ 
+
+  }
+  /*This section will edit how the menu looks like when clicking the hamburger*/
+  .nav-elem{
+    position:fixed; /*when scrolling the navigation menu will stay on the screen*/
+    left:100%; 
+    gap:0;
+    flex-direction: column; /* So that the dropdown menu when opening the hamburger displays as columns*/
+    background-color: #f2efe6;
+    width: 100%;
+    text-align: center;
+    top:5px;
+    transition: 0.3s;
+  }
+  .nav-item{
+    margin:16px 0;
+  }
+  .nav-elem.active{
+    left:0;
+  }
+}
+
+
+/*-------------------------------------------------------------------------------------*/
+  /*Main Page CSS source: https://www.youtube.com/watch?v=ZdJSHEczi_0*/
+/* and source: https://www.youtube.com/watch?v=ZYV6dYtz4HA to help create responsive texts for the main menu*/
+  a {
+    text-decoration: none;
+  }
+
+  /*sets the responsive design for the background image*/
+.home-section {
+  background-repeat: no-repeat;
+  width: 100vw;
+  height:100vh;
+  background-image: url('Images/Group.jpg');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center; 
+}
+
+/*margins for the text*/
+.section-content{
+ margin-bottom: 280px;
+ color:rgb(255, 255, 255);
+ text-align: center;
+
+}
+/*font size and color for h1*/
+.section-content h1{
+  font-size: 7vmin;
+  background-color: #1a1919b4;
+}
+
+/*style for the line in the middle of the screen*/
+.line {
+  width: 350px;
+  height: 4px;
+  background: #a99b77;
+  margin: 10px auto;
+  border-radius: 3px;
+}
+/*positioning for h2 and their font size and background color*/
+.section-content h2{
+  font-size: 4vmin;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  background-color: #1a1919b4;
+}
+
+/*styles for the fake button*/
+.consult{
+  padding: 8px 12px;
+  background:#a88967;
+  border-radius: 20px;
+  color:rgb(251, 251, 251);
+}
+/*create a hover effect for the fake button*/
+.consult:hover{
+  background: rgb(216, 164, 66);
+  transition: 0.6s;
+  color: white;
+}
+
+
+
+
+/*----------------------------------------------------------------------------*/
+/*meet the team and location CSS*/
+/*Sets the wording format and style for the meet the team headers and paragraph - Kris*/
+.meettheteamheader{ 
+  font-weight: bolder;
+  font-style: normal;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  font-size: 120%;
+}
+
+.meettheteamheader2{ 
+  font-weight: bolder;
+  font-style: normal;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  font-size: 100%;
+}
+
+.meettheteamtxt {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  font-size: 100%;
+  text-indent: 4.0%;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+
+@media screen and (min-width: 600px) {
+  .col1 {
+    flex: 50%;
+    padding: 5px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .col2 {
+    flex: 50%;
+    padding: 5px;
+  } 
+}
+
+@media screen and (min-width: 600px) {
+  .row1 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .row2 {
+    display: flex;
+  }
+}
+
+/*Image Sizing*/
+img {
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 1px;
+  width: 100%;
+}
+  /*----------------------------------------------------------------------------*/
+/*Area of Practice CSS*/
+/*Sets the wording format and style for the area of practice headers and paragraph - Kris*/
+
+  .practiceareaheader{
+    font-weight: bolder;
+    font-style: normal;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    font-size: 200%;
+  }
+
+  .practiceareaparagraph{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    font-size: 150%;
+  }
+  /*----------------------------------------------------------------------------*/
+/*Reviews CSS*/
+/*Sets the wording format and style for the reviews headers and paragraph - Kris*/
+  .reviewsheader{
+    font-weight: bolder;
+    font-style: normal;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    font-size: 200%;
+  }
+
+  .reviewsparagraph{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    font-size: 150%;
+  }
+
+  body{
+    font-family: 'Work Sans', sans-serif;
+  }
+  /*----------------------------------------------------------------------------*/
+/*FAQ CSS*/
+/*Sets the wording format and style for the FAQ headers and paragraph - Kris*/
+  .faq-heading{
+      border-bottom: #777;
+      text-align: left;
+  }
+  .faq-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  }
+
+  .hr-line{
+    width: 60%;
+    margin: auto;
+  }
+
+/* /* Victoria FAQ CSS Blck text
+/* /*  */
+
+.faq-one {
+  background-color: #cfc89b73;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  }
+  
+  .faq-two {
+  background-color: #cfc89b73;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  }
+  
+  .faq-three {
+  background-color: #cfc89b73;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  }
+  
+/*CSS for contactus page by: Andy Mo*/
+
+ /*edits the padding/margins of all classes with the name 'container'*/ 
+ .container {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.section-header {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.section-header h2 {
+  color: rgb(49, 45, 45);
+  font-weight: bold;
+  font-size: 3em;
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
+
+.section-header p {
+  color: rgb(27, 24, 24);
+}
+
+/*used flex for the row(which has all div elements inside) so its easier to design the responsive layout*/
+.row  {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-info {
+  width: 50%;
+}
+
+/* Spacing and responsive layout for all elements in this class*/
+.contact-info-item {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+/*edits and adds in a background-color behind the font awesome icons*/
+.contact-info-icon {
+  height: 70px;
+  width: 70px;
+  background-color: rgb(231, 230, 230);
+  text-align: center;
+  border-radius: 50%;
+}
+
+/*sizing for the icons*/
+.contact-info-icon i {
+  font-size: 30px;
+  line-height: 70px;
+}
+
+/* spacing for all classes with contact-info-content*/
+.contact-info-content {
+  margin-left: 20px;
+}
+
+/*sizing, color and positioning for h4*/
+.contact-info-content h4 {
+  color: #e9e0c3;
+  font-size: 1.4em;
+  margin-bottom: 5px;
+}
+
+/*font size and coloring for all elements in this class*/ 
+.contact-info-content p {
+  color: rgb(0, 0, 0);
+  font-size: 1em;
+}
+
+/*Adds padding and background color for the contact-form*/
+.contact-form {
+  background-color: rgb(212, 210, 199);
+  padding: 40px;
+  width: 45%;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+/*adds padding, font size for "Send Message" text*/
+.contact-form h2 {
+  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: rgb(110, 103, 86);
+}
+
+
+/*positions the text in the contact form*/
+.contact-form .input-box {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/*the padding, margins, and font size for the form blocks*/
+.contact-form .input-box input,
+.contact-form .input-box textarea{
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #333;
+  outline: none;
+  resize: none;
+}
+
+/* margins, font size, and transition effects for the text in the contact form*/
+.contact-form .input-box span {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  pointer-events: none;
+  transition: 0.5s;
+  color: #666;
+}
+
+/*the text in the contact form will translate -20px when the user clicks on one of the forms*/
+.contact-form .input-box input:focus ~ span,
+.contact-form .input-box textarea:focus ~ span{
+  color: #161314;
+  font-size: 12px;
+  transform: translateY(-22px);
+}
+
+/*padding, coloring, width, and transition effects for the "Send" button*/
+.contact-form .input-box input[type="submit"] {
+  width: 100%;
+  background: #151616;
+  color: #FFF;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  transition: 0.5s;
+}
+
+/*hover effect for the "Send" button*/
+.contact-form .input-box input[type="submit"]:hover
+{
+  background: rgb(179, 125, 11);
+  color: #121213;
+}
+
+/*when the window is closed to 990pixels the contact form will collapse and sent to the bottom*/
+@media (max-width: 990px) {
+  section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .row {
+    flex-direction: column;
+  }
+  
+  .contact-info {
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  
+  .contact-form {
+    width: 100%;
+  }
+}
+
+/*END CSS for Contact Page*/
+
+/* Victoria CSS for review page*/
+/* Below begins the backgroung image (page 1), source: https://www.w3schools.com/cssref/pr_background-image.asp   */
+  .landscape{
+    
+    background-repeat: no-repeat;
+    width: 100vw;
+    height:100vh;
+    background-image: url('Images/Landscape.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center; 
+  }
+   
+
+.reviewparagraph{
+  font-size: 16px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: 60px;
+  margin-right: 60px;
+  background-color: #998e683b;
+}
+
+
+/* Victoria CSS about page -*/
+
+@media (max-width: 901px) {
+.whoarewe{
+  background-color: #86808063;
+}
+}
+
+@media (min-width: 991px) {
+.whatarewe{
+  background-color: #86808063;
+}
+}
+
+ @media screen and (min-width: 600px) {
+  .col5 {
+    flex: 50%;
+    font-size: 16px;
+    padding: 100px;
+    padding-right: 60px;
+    background-color: #86808088;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .col6 {
+    flex: 50%;
+    font-size: 16px;
+    padding: 100px;
+  background-color: #86808088;
+}
+  } 
+
+
+@media screen and (min-width: 600px) {
+  .row5 {
+    display: flex;
+  }
+}
+
+/*Services Section CSS - Alex */
+
+/*Centers the services blocks*/
+.service-section .row{
+  display:block;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  color: rgb(90, 84, 73);
+}
+
+/*Style for the left most block*/
+.service-left{
+  background-color: #957355;
+  padding: 5% 5%;
+  color: white;
+}
+
+/*style for the middle block*/
+.service-middle {
+  background-color: rgb(50, 45, 45);
+  padding: 5% 5%;
+  color: white;
+}
+
+/*style for the right block*/
+.service-right{
+  background-color: rgb(49, 39, 39);
+  padding: 5% 5%;
+  color:white
+}
+
+/*style for the text "services we employ" by setting margins so the text dont appear stuck to the block and navigation bar*/
+.service-text{
+margin-top: 20px;;
+margin-bottom: 20px;
+}
+
+/*Google Map API Styling - Alex*/
+.API {
+  max-width: 100%;
+  width: 1000px;
+    }
+
